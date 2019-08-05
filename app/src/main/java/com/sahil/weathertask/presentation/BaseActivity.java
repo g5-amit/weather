@@ -10,10 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.sahil.weathertask.di.factory.DaggerViewModelFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseActivity extends AppCompatActivity {
+import javax.inject.Inject;
+
+import dagger.android.support.DaggerAppCompatActivity;
+
+public abstract class BaseActivity extends DaggerAppCompatActivity {
+
+    @Inject
+    public DaggerViewModelFactory mViewModelFactory;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
