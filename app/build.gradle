@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion project.compileSDK
     defaultConfig {
         applicationId "com.sahil.weathertask"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode project.versionCode
+        versionName project.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,12 +16,49 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Support
+    implementation "androidx.appcompat:appcompat:${project.appCompat}"
+    implementation "com.google.android.material:material:${project.material}"
+    implementation "androidx.constraintlayout:constraintlayout:${project.constraintLayout}"
+
+    //Location
+    implementation "com.google.android.gms:play-services-location:${project.location}"
+
+    //Dagger dependencies
+    implementation "com.google.dagger:dagger:${project.daggerVersion}"
+    implementation "com.google.dagger:dagger-android-support:${project.daggerVersion}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${project.daggerVersion}"
+    annotationProcessor "com.google.dagger:dagger-android-processor:${project.daggerVersion}"
+
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:${project.lifecycle}"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${project.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${project.retrofit}"
+    implementation "com.squareup.retrofit2:converter-moshi:${project.retrofit}"
+
+    //OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:${project.okHttp}"
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:${project.rxjava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${project.rxandroid}"
+
+    //Testing
+    testImplementation "junit:junit:${project.junit}"
+
+    testImplementation "org.mockito:mockito-core:${project.mockito}"
+    androidTestImplementation "org.mockito:mockito-android:${project.mockito}"
+
+    testImplementation "androidx.arch.core:core-testing:${project.archTesting}"
 }
