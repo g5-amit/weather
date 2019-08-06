@@ -3,4 +3,10 @@
 
     <string name="something_wrong">Something went wrong at our end!</string>
     <string name="retry">Retry</string>
+
+    <string name="temp_degree">%d&#176;</string>
+    <string name="unable_fetch_location">Unable to fetch current location. Please try again after some time</string>
+    <string name="permission_needed">Permission needed..</string>
+    <string name="ok">OK</string>
+    <string name="no_connection">No connection..</string>
 </resources>
