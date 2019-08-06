@@ -11,6 +11,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.support.DaggerApplication;
 
 import com.sahil.weathertask.di.modules.ActivityModule;
+import com.sahil.weathertask.di.modules.ApiModule;
 import com.sahil.weathertask.di.modules.ViewModelModule;
 
 @Singleton
@@ -18,7 +19,8 @@ import com.sahil.weathertask.di.modules.ViewModelModule;
         modules = {
                 AndroidInjectionModule.class,
                 ActivityModule.class,
-                ViewModelModule.class
+                ViewModelModule.class,
+                ApiModule.class
         }
 )
 public interface AppComponent extends AndroidInjector<DaggerApplication> {

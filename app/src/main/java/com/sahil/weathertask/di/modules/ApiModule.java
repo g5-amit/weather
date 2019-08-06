@@ -1,6 +1,5 @@
 package com.sahil.weathertask.di.modules;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Named;
@@ -8,12 +7,14 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+
 import com.sahil.weathertask.BuildConfig;
 import com.sahil.weathertask.common.values.Constants;
+import com.sahil.weathertask.data.api.ApiInterface;
+
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
@@ -28,7 +29,7 @@ public class ApiModule {
     @Singleton
     @Named("baseUrl")
     public String provideBaseUrl() {
-        return "";
+        return BuildConfig.BASE_URL;
     }
 
     @Provides
@@ -54,15 +55,12 @@ public class ApiModule {
     @Singleton
     @Provides
     public Interceptor provideRequestInterceptor() {
-        return new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                Request.Builder builder = chain.request().newBuilder();
+        return chain -> {
+            Request.Builder builder = chain.request().newBuilder();
 
-                /** Use this interceptor to add any header to request like jwt authToken, a global param */
+            /** Use this interceptor to add any header to request like jwt authToken, a global param */
 
-                return chain.proceed(builder.build());
-            }
+            return chain.proceed(builder.build());
         };
     }
 
@@ -95,5 +93,10 @@ public class ApiModule {
                 .build();
     }
 
+    @Provides
+    @Singleton
+    public ApiInterface provideApiInterface(Retrofit retrofit) {
+        return retrofit.create(ApiInterface.class);
+    }
 
 }
