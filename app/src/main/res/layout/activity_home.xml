@@ -52,7 +52,8 @@
             android:layout_marginTop="@dimen/margin_16dp"
             android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:reverseLayout="false" />
+            app:reverseLayout="false"
+            tools:listitem="@layout/layout_forecast_item" />
 
     </com.google.android.material.card.MaterialCardView>
 
