@@ -104,6 +104,7 @@ public class HomeActivity extends BaseActivity implements LocationUtils.Location
 
         button_retry.setOnClickListener(v -> {
             layout_error.setVisibility(View.GONE);
+            showLoader();
             getForecastData();
         });
      }
