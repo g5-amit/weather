@@ -1,5 +1,7 @@
 package com.sahil.weathertask.data.pojo;
 
+import androidx.annotation.Nullable;
+
 import java.util.List;
 
 public class WeatherDisplayData {
@@ -37,6 +39,17 @@ public class WeatherDisplayData {
         this.forecastList = forecastList;
     }
 
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if (obj instanceof WeatherDisplayData) {
+            WeatherDisplayData model = (WeatherDisplayData) obj;
+            return (place.equals(model.place) && currentTemp == model.currentTemp &&
+                    forecastList.equals(model.getForecastList()));
+        } else {
+            return false;
+        }
+    }
+
     public static class Forecast {
         private String date;
         private String weekDay;
@@ -70,6 +83,17 @@ public class WeatherDisplayData {
 
         public void setTemp(String temp) {
             this.temp = temp;
+        }
+
+        @Override
+        public boolean equals(@Nullable Object obj) {
+            if (obj instanceof Forecast) {
+                Forecast forecast = (Forecast) obj;
+                return (date.equals(forecast.date) && weekDay.equals(forecast.weekDay) &&
+                        temp.equals(forecast.temp));
+            } else {
+                return false;
+            }
         }
     }
 }
