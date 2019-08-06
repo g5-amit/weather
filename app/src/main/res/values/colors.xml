@@ -6,4 +6,12 @@
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+
+    <color name="bg_color">#F5F6F7</color>
+    <color name="grey_black">#2A2A2A</color>
+
+    <color name="soft_red">#E85959</color>
+    <color name="grey">#4A4A4A</color>
+    <color name="blue_purple">#556799</color>
+    <color name="light_grey">#DCDCDC</color>
 </resources>
