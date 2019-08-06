@@ -1,10 +1,10 @@
 package com.sahil.weathertask.common.utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.sahil.weathertask.data.pojo.WeatherDisplayData;
 import com.sahil.weathertask.data.pojo.WeatherForecastResponse;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapperUtils {
 

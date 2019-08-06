@@ -1,9 +1,9 @@
 package com.sahil.weathertask;
 
+import com.sahil.weathertask.di.component.DaggerAppComponent;
+
 import dagger.android.AndroidInjector;
 import dagger.android.support.DaggerApplication;
-
-import com.sahil.weathertask.di.component.DaggerAppComponent;
 
 public class WeatherApp extends DaggerApplication {
 

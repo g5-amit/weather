@@ -2,12 +2,13 @@ package com.sahil.weathertask.presentation.home;
 
 import androidx.lifecycle.MutableLiveData;
 
-import javax.inject.Inject;
-
 import com.sahil.weathertask.data.pojo.BaseModel;
 import com.sahil.weathertask.data.pojo.WeatherDisplayData;
 import com.sahil.weathertask.model.WeatherForecastModel;
 import com.sahil.weathertask.presentation.BaseViewModel;
+
+import javax.inject.Inject;
+
 import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposable;
 

@@ -1,5 +1,9 @@
 package com.sahil.weathertask.di.modules;
 
+import com.sahil.weathertask.BuildConfig;
+import com.sahil.weathertask.common.values.Constants;
+import com.sahil.weathertask.data.api.ApiInterface;
+
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Named;
@@ -7,11 +11,6 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-
-import com.sahil.weathertask.BuildConfig;
-import com.sahil.weathertask.common.values.Constants;
-import com.sahil.weathertask.data.api.ApiInterface;
-
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

@@ -1,10 +1,11 @@
 package com.sahil.weathertask.data.repo;
 
-import javax.inject.Inject;
-
 import com.sahil.weathertask.BuildConfig;
 import com.sahil.weathertask.data.api.ApiInterface;
 import com.sahil.weathertask.data.pojo.WeatherForecastResponse;
+
+import javax.inject.Inject;
+
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

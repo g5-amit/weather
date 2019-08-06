@@ -1,10 +1,11 @@
 package com.sahil.weathertask.model;
 
-import javax.inject.Inject;
-
 import com.sahil.weathertask.common.utils.MapperUtils;
 import com.sahil.weathertask.data.pojo.WeatherDisplayData;
 import com.sahil.weathertask.data.repo.WeatherForecastRepo;
+
+import javax.inject.Inject;
+
 import io.reactivex.Single;
 
 public class WeatherForecastModel {
